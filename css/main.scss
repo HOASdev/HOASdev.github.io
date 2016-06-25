@@ -6,6 +6,7 @@
 
 
 // Our variables
+/*
 $base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
@@ -27,8 +28,10 @@ $content-width:    800px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
+*/
 
 
+/*
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -42,12 +45,18 @@ $on-laptop:        800px;
         @content;
     }
 }
-
+*/
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)
+/*
 @import
         "base",
         "layout",
         "syntax-highlighting"
+;
+*/
+
+@import
+	"theme"
 ;
