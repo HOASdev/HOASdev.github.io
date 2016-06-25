@@ -16,11 +16,14 @@
 
 
 <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
 
-  <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, user-scalable=1" />
-  
-  
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
 
   <link rel="pingback" href="xmlrpc.php" />
 
@@ -93,24 +96,28 @@ chosen link or button.
 
   
 <!-- This site is optimized with the Yoast SEO plugin v2.3.4 - https://yoast.com/wordpress/plugins/seo/ -->
-<title>Acumen is a Bold New Way of Tackling Poverty</title>
-<meta name="description" content="Acumen is a non-profit that raises charitable donations to invest in companies, leaders, and ideas that are changing the way the world tackles poverty."/>
-<link rel="canonical" href="index.html" />
+
+ <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 <meta property="og:locale" content="en_US" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Acumen is a Bold New Way of Tackling Poverty" />
-<meta property="og:description" content="Acumen is a non-profit that raises charitable donations to invest in companies, leaders, and ideas that are changing the way the world tackles poverty." />
-<meta property="og:url" content="http://acumen.org/" />
+
+<!-- need to update config file 
 <meta property="og:site_name" content="Acumen" />
 <meta property="og:image" content="http://acumen.org/content/themes/acu-theme/BW/ACU/resources/images/acumen-og.png" />
+-->
+<!-- not sure what this is 
 <script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","url":"http:\/\/acumen.org\/","name":"Acumen","potentialAction":{"@type":"SearchAction","target":"http:\/\/acumen.org\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+-->
 <!-- / Yoast SEO plugin. -->
+
+<!-- RSS feed 
 
 <link rel="alternate" type="application/rss+xml" title="Acumen &raquo; Homepage Comments Feed" href="homepage/feed/index.html" />
     <script type="text/javascript">
       window._wpemojiSettings = {"baseUrl":"http:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/acumen.org\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.4"}};
       !function(a,b,c){function d(a){var c=b.createElement("canvas"),d=c.getContext&&c.getContext("2d");return d&&d.fillText?(d.textBaseline="top",d.font="600 32px Arial","flag"===a?(d.fillText(String.fromCharCode(55356,56806,55356,56826),0,0),c.toDataURL().length>3e3):("simple"===a?d.fillText(String.fromCharCode(55357,56835),0,0):d.fillText(String.fromCharCode(55356,57135),0,0),0!==d.getImageData(16,16,1,1).data[0])):!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g;c.supports={simple:d("simple"),flag:d("flag"),unicode8:d("unicode8")},c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.simple&&c.supports.flag&&c.supports.unicode8||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
     </script>
+    -->
 
 <link rel='stylesheet' id='entermedia-css'  href='wp-content/themes/acumen-theme/entermedia/css/entermediaeb11.css?ver=4.4' type='text/css' media='all' />
 <script type='text/javascript' src='wp-includes/js/jquery/jqueryc1d8.js?ver=1.11.3'></script>
